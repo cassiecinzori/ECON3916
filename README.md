@@ -1,4 +1,4 @@
-### Template for Lecture 1 Portfolio Entry
+## Hello, Pandas" & The Digital Portfolio
 #### Project Title: Global Purchasing Power Parity Analysis via the Big Mac Index
 
 ##### Objective: To empirically test the Law of One Price and identify currency misalignments using the "Burgernomics" standard.
