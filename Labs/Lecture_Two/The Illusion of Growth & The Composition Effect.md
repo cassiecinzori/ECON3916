@@ -1,10 +1,10 @@
 # Lab 2: The Illusion of Growth & The Composition Effect
 
-## 🎯 Objective
+## Objective
 
 Built a Python pipeline to ingest live economic data from the Federal Reserve Economic Data (FRED) API to analyze long-run wage stagnation and correct for composition bias in labor market statistics. This project demonstrates the critical difference between nominal and real economic indicators, and exposes how workforce composition changes can create misleading signals in aggregate wage data.
 
-## 🔬 Methodology
+## Methodology
 
 ### Data Acquisition & Transformation
 - **API Integration**: Leveraged the `fredapi` Python library to programmatically fetch real-time macroeconomic data from the St. Louis Federal Reserve database
@@ -24,7 +24,7 @@ Built a Python pipeline to ingest live economic data from the Federal Reserve Ec
 - **Tech Stack**: Python, pandas (data manipulation), matplotlib (visualization), fredapi (data ingestion)
 - **Data Pipeline**: Automated ETL process from FRED API → DataFrame transformation → statistical adjustment → publication-ready visualizations
 
-## 📊 Key Findings: The Pandemic Paradox
+## Key Findings: The Pandemic Paradox
 
 ### The Money Illusion (1964-Present)
 Real wages have remained essentially flat for over 50 years when adjusted for inflation, despite nominal wages increasing nearly 10x. This demonstrates the critical importance of distinguishing between nominal growth (which creates an "illusion" of prosperity) and real purchasing power.
