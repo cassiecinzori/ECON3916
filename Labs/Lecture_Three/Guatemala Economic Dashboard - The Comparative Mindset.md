@@ -1,7 +1,7 @@
-# Lab 3: Guatemala Economic Dashboard - The Comparative Mindset
+# Lab 3: Vietnam Economic Dashboard - The Comparative Mindset
 
 ## Overview
-This lab demonstrates how trends without context can be misleading. We analyze Guatemala's economy by fetching data from the World Bank API, visualizing individual indicators, and ultimately synthesizing them into an executive dashboard.
+This lab demonstrates how trends without context can be misleading. We analyze Vietnam's economy by fetching data from the World Bank API, visualizing individual indicators, and ultimately synthesizing them into an executive dashboard.
 
 **Key Learning:** A line going "up" can look impressive in isolation, but benchmarking against global averages reveals the full story.
 
@@ -21,7 +21,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-country_codes = ['GTM', 'UMC', 'WLD']  # Guatemala, Upper Middle Income, World
+country_codes = ['VNM', 'UMC', 'WLD']  # Vietnam, Upper Middle Income, World
 ```
 
 We track 12 economic indicators covering:
@@ -33,12 +33,12 @@ We track 12 economic indicators covering:
 - **Fiscal:** Tax Revenue, Government Expenditure
 
 #### Step 2: Data Ingestion & Cleaning
-Fetch data from World Bank API (2000-2025), transpose the DataFrame, clean the index, and extract Guatemala-specific data:
+Fetch data from World Bank API (2000-2025), transpose the DataFrame, clean the index, and extract Vietnam-specific data:
 ```python
 df_raw = wb.data.DataFrame(indicators, economy=country_codes, time=range(2000, 2025))
 df = df_raw.T
 df.index = df.index.str.replace('YR', '').astype(int)
-df_gtm = df.xs('GTM', axis=1, level=0).copy()
+df_vnm = df.xs('VNM', axis=1, level=0).copy()
 ```
 
 #### Step 3: Calculate Derived Metrics
@@ -55,10 +55,10 @@ Manually compute four key indicators:
 You must hand-code 8 exercises to understand how visualization choices shape narratives:
 
 #### Exercise 1: The "Narrow View"
-Plot Guatemala's GDP Per Capita alone. Notice how impressive the growth looks without context.
+Plot Vietnam's GDP Per Capita alone. Notice how impressive the growth looks without context.
 
 #### Exercise 2: The "Full Picture"
-Add Upper Middle Income and World averages as benchmarks. The story changes dramatically when you see Guatemala lagging behind peers.
+Add Upper Middle Income and World averages as benchmarks. The story reveals Vietnam's remarkable convergence trajectory—starting well below both benchmarks in 2000 but rapidly closing the gap through export-led industrialization.
 
 #### Exercise 3-8: Component Visualizations
 Build individual charts for:
@@ -83,7 +83,7 @@ You've manually built the components and understand the underlying data. Now you
 #### The Prompt
 Paste this into Claude (or your preferred AI):
 ```
-I have a DataFrame 'df_gtm' containing economic indicators for Guatemala.
+I have a DataFrame 'df_vnm' containing economic indicators for Vietnam.
 I need to create a **2x3 Executive Dashboard** summarizing the economy using Matplotlib/Seaborn.
 
 **The Variables:**
@@ -107,7 +107,7 @@ I need to create a **2x3 Executive Dashboard** summarizing the economy using Mat
 
 **Style:**
 * Use plt.style.use('dark_background')
-* Add main title: 'Guatemala Economic Snapshot'
+* Add main title: 'Vietnam Economic Snapshot'
 * Use tight_layout() to prevent overlap
 ```
 
@@ -130,7 +130,7 @@ The AI generates complete production-ready code that:
 
 ## Key Takeaways
 
-1. **Context is everything:** Guatemala's GDP growth looks impressive alone, but benchmarking reveals it's lagging behind peers
+1. **Context is everything:** Vietnam's GDP growth looks impressive alone, but benchmarking reveals a dramatic convergence story—rapidly catching up to Upper Middle Income peers
 2. **Visualization choices matter:** Chart types, axes, and comparisons fundamentally alter the narrative
 3. **AI as a productivity tool:** After understanding components manually, AI accelerates synthesis and production
 4. **The comparative mindset:** Always ask "compared to what?" when evaluating economic performance
@@ -138,12 +138,12 @@ The AI generates complete production-ready code that:
 ---
 
 ## Files in This Repository
-- `lab3_guatemala_analysis.ipynb` - Main analysis notebook with all exercises
+- `lab3_vietnam_analysis.ipynb` - Main analysis notebook with all exercises
 - `README.md` - This file
 - `requirements.txt` - Python dependencies (wbgapi, pandas, matplotlib, seaborn)
 
 ## Running the Lab
 ```bash
 pip install -r requirements.txt
-jupyter notebook lab3_guatemala_analysis.ipynb
+jupyter notebook lab3_vietnam_analysis.ipynb
 ```
